@@ -138,13 +138,6 @@
         <p id="detail-text"></p>
     </div>
 
-    <div class="interactive-section" style="margin-top: 40px;">
-        <h2>Simulador de Lógica Rápida</h2>
-        <p>¿Qué pasa si tienes hambre?</p>
-        <div id="flow-demo">
-            <button onclick="runFlow()">Iniciar Proceso</button>
-        </div>
-        <p id="flow-output" style="font-weight: bold; color: var(--primary); margin-top: 15px;"></p>
     </div>
 </div>
 
@@ -155,23 +148,6 @@
         document.getElementById('detail-text').innerText = text;
         detailView.style.display = 'block';
         window.scrollTo({ top: detailView.offsetTop - 50, behavior: 'smooth' });
-    }
-
-    function runFlow() {
-        const output = document.getElementById('flow-output');
-        output.innerText = "1. Inicio 🏁";
-        
-        setTimeout(() => {
-            output.innerText += " -> 2. ¿Tienes hambre? (Decisión) 🤔";
-            setTimeout(() => {
-                const hambre = confirm("¿Tienes hambre ahora mismo?");
-                if(hambre) {
-                    output.innerText += " -> 3. SÍ: Preparar comida (Proceso) 🍳 -> 4. Fin ✅";
-                } else {
-                    output.innerText += " -> 3. NO: Seguir trabajando (Proceso) 💻 -> 4. Fin ✅";
-                }
-            }, 500);
-        }, 1000);
     }
 </script>
 
